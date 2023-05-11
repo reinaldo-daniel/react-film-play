@@ -1,0 +1,57 @@
+.banner {
+    height: 100vh;
+    background-image: url(../images/7825073.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.conteudo {
+    padding: 50px;
+}
+
+.labelCarousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.verMais {
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.teste {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+}
+
+.verMais:hover {
+    color: black;
+    background-color: white;
+}
+
+.carousel {
+    cursor: grab;
+    overflow: hidden;
+    /* margin-bottom: 1200px; */
+}
+
+.inner {
+    display: flex;
+}
+
+/* .item {
+    padding: 1rem;
+    width: 500px;
+} */
+
+@media screen and (max-width: 768px) {
+    .banner {
+        background-image: url(../images/7825067.jpg);
+    }
+}

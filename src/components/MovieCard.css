@@ -1,0 +1,9 @@
+.movie-card {
+    padding: 10px;
+}
+
+.poster-image {
+    width: 250px;
+    border-radius: 15px;
+    pointer-events: none;
+}
