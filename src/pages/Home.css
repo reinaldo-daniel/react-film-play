@@ -10,12 +10,6 @@
     padding: 50px;
 }
 
-.labelCarousel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .verMais {
     border: 1px solid white;
     padding: 5px 10px;
@@ -25,9 +19,10 @@
 
 .teste {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     flex: 1;
+    overflow: hidden;
 }
 
 .verMais:hover {
@@ -35,20 +30,11 @@
     background-color: white;
 }
 
-.carousel {
-    cursor: grab;
-    overflow: hidden;
-    /* margin-bottom: 1200px; */
-}
+
 
 .inner {
     display: flex;
 }
-
-/* .item {
-    padding: 1rem;
-    width: 500px;
-} */
 
 @media screen and (max-width: 768px) {
     .banner {

@@ -12,6 +12,13 @@ const Home = () => {
     const [widthCarousel, setWidthCarousel] = useState(0);
     const [topMovies, setTopMovies] = useState([]);
     const [newMovies, setNewMovies] = useState([]);
+    const [upcomingMovies, setUpcomingMovies] = useState([]);
+
+    const getUpcomingMovies = async (url) => {
+        const res = await fetch(url);
+        const data = await res.json();
+        setUpcomingMovies(data.results);
+    };
 
     const getTopRatedMovies = async (url) => {
         const res = await fetch(url);
@@ -30,7 +37,9 @@ const Home = () => {
 
         const popularUrl = `${moviesURL}popular?${apiKey}&language=pt-BR`;
         const newUrl = `${moviesURL}now_playing?${apiKey}&language=pt-BR`;
+        const upcoming = `${moviesURL}upcoming?${apiKey}&language=pt-BR`;
 
+        getUpcomingMovies(upcoming);
         getTopRatedMovies(popularUrl);
         getNewMovies(newUrl);
     }, []);
@@ -39,35 +48,35 @@ const Home = () => {
         setWidthCarousel(
           carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0
         );
-      }, [topMovies]);
-
-    console.log(newMovies);
+      }, [upcomingMovies]);
 
     return (
         <div className="container">
             <div className="banner" />
+            
             <div className="conteudo">
-                <div className="labelCarousel">
-                    <h2 className="title">Melhores filmes:</h2>
-                    <Link className="verMais">Ver Mais</Link>
-                </div>
                 <div className="teste">
                     <Carousel
+                        title={'Filmes populares:'}
                         reference={carousel}
                         size={widthCarousel}
                         array={topMovies}   
                     />
+
+                    <Carousel
+                        title={'Lançados recentemente:'}
+                        reference={carousel}
+                        size={widthCarousel}
+                        array={newMovies}   
+                    />
+
+                    <Carousel
+                        title={'Próximos filmes á serem lançados:'}
+                        reference={carousel}
+                        size={widthCarousel}
+                        array={upcomingMovies}   
+                    />
                 </div>
-                <Carousel
-                        reference={carousel}
-                        size={widthCarousel}
-                        array={topMovies}   
-                />
-                <Carousel
-                        reference={carousel}
-                        size={widthCarousel}
-                        array={topMovies}   
-                />
             </div>
         </div>
     );

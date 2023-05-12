@@ -1,0 +1,12 @@
+.componente {
+    padding: 30px 0;
+}
+
+.labelCarousel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel {
+    cursor: grab;
+}

@@ -42,10 +42,10 @@ const Navbar = ({ isScrolled }) => {
                 </Link>
 
                 <nav className={active ? 'showNav' : ''}>
-                    <Link className="linkNav">Filmes</Link>
-                    <Link className="linkNav">Séries</Link>
-                    <Link className="linkNav">Programas de TV</Link>
-                    <Link className="linkNav">Pessoas</Link>
+                    <Link>Filmes</Link>
+                    <Link>Séries</Link>
+                    <Link>Programas de TV</Link>
+                    <Link>Pessoas</Link>
                 </nav>
 
                 <Link to={'/'}>

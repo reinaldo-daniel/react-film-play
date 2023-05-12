@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import MovieCard from "../components/MovieCard";
+import './Carousel.css'
 
-const Carousel = ({reference, size, array}) => {
+const Carousel = ({reference, size, array, title}) => {
     return(
-        <>
+        <div className="componente">
+           <div className="labelCarousel">
+                <h2>{title}</h2>
+                <Link className="verMais">Ver Mais</Link>
+           </div>
             <motion.div 
                 ref={reference} 
                 className="carousel" 
@@ -29,7 +35,7 @@ const Carousel = ({reference, size, array}) => {
                     )}
                 </motion.div>
             </motion.div>
-        </>
+        </div>
     )
 }
 

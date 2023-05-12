@@ -24,9 +24,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     width: 550px;
-}
-
-.linkNav {
     font-size: 20px;
 }
 
@@ -63,7 +60,7 @@ nav a:hover::after {
     background-color: black;
 }
 
-.menuIcon, .icon {
+.menuIcon {
     display: none;
 }
 
